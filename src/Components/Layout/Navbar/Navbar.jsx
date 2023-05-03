@@ -67,37 +67,7 @@ const Navbar = () => {
     Resources.current.style.transform = "translateY(550px)";
   };
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const allinput1 = useRef();
-  const initialRef = React.useRef(null);
-  const finalRef = React.useRef(null);
-
-  const [fname, setfname] = useState("");
-  const [lname, setlname] = useState("");
-  const [cname, setcname] = useState("");
-  const [website, setwebsite] = useState("");
-  const [job, setjob] = useState("");
-  const [phone, setphone] = useState("");
-  const [email, setemail] = useState("");
-
-  const [inputvalid, setinputvalid] = useState("");
-
-  const [merror, setmerror] = useState(false);
-
-  const modalbtn = (e) => {
-    e.preventDefault();
-    if (
-      fname.length == 0 ||
-      lname.length == 0 ||
-      cname.length == 0 ||
-      website.length == 0 ||
-      job.length == 0 ||
-      phone.length == 0 ||
-      email.length == 0
-    ) {
-      setmerror(true);
-    }
-  };
+ 
 
   return (
     <nav>
@@ -270,124 +240,11 @@ const Navbar = () => {
                 <div className={styles.sag_nav}>
                   <p>Client login</p>
 
-                  <Button className={styles.btn_nav} onClick={onOpen}>
+                  <Button className={styles.btn_nav} >
                     Get in touch
                   </Button>
 
-                  <Modal
-                    blockScrollOnMount={false}
-                    isOpen={isOpen}
-                    onClose={onClose}
-                  >
-                    <ModalOverlay />
-                    <ModalContent className={styles.modalcontent}>
-                      <ModalCloseButton className={styles.closebtn} />
-                      <ModalHeader className={styles.mheader}>
-                        Tell us about yourself!
-                      </ModalHeader>
-
-                      <ModalBody className={styles.mbody}>
-                        <div ref={allinput1} className={styles.allinput}>
-                          <FormControl>
-                            <Input
-                              onChange={(e) => setfname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="First name*"
-                            />
-
-                            {merror && fname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setlname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Last name*"
-                            />
-
-                            {merror && lname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setcname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Company name*"
-                            />
-
-                            {merror && cname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setwebsite(e.target.value)}
-                              className={styles.minput}
-                              placeholder="PMC Website*"
-                            />
-
-                            {merror && website.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setjob(e.target.value)}
-                              className={styles.minput}
-                              placeholder="JOb Title"
-                            />
-
-                            {merror && job.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setphone(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Phone Number*"
-                            />
-
-                            {merror && phone.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setemail(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Buisness Email Adress"
-                            />
-
-                            {merror && email.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                        </div>
-
-                        <Button onClick={modalbtn}>Go</Button>
-                      </ModalBody>
-                    </ModalContent>
-                  </Modal>
+                
                 </div>
               </div>
             </div>
@@ -434,125 +291,11 @@ const Navbar = () => {
               </ul>
               <div className={styles.buttons}>
 
-                <Button className={styles.touch} onClick={onOpen}>
+                <Button className={styles.touch} >
                     Get in touch
                   </Button>
 
-                  <Modal
-                  className={styles.modalll}
-                    blockScrollOnMount={false}
-                    isOpen={isOpen}
-                    onClose={onClose}
-                  >
-                    <ModalOverlay />
-                    <ModalContent className={styles.modalcontent}>
-                      <ModalCloseButton className={styles.closebtn} />
-                      <ModalHeader className={styles.mheader}>
-                        Tell us about yourself!
-                      </ModalHeader>
-
-                      <ModalBody className={styles.mbody}>
-                        <div ref={allinput1} className={styles.allinput}>
-                          <FormControl>
-                            <Input
-                              onChange={(e) => setfname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="First name*"
-                            />
-
-                            {merror && fname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setlname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Last name*"
-                            />
-
-                            {merror && lname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setcname(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Company name*"
-                            />
-
-                            {merror && cname.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setwebsite(e.target.value)}
-                              className={styles.minput}
-                              placeholder="PMC Website*"
-                            />
-
-                            {merror && website.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setjob(e.target.value)}
-                              className={styles.minput}
-                              placeholder="JOb Title"
-                            />
-
-                            {merror && job.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setphone(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Phone Number*"
-                            />
-
-                            {merror && phone.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-
-                          <FormControl mt={4}>
-                            <Input
-                              onChange={(e) => setemail(e.target.value)}
-                              className={styles.minput}
-                              placeholder="Buisness Email Adress"
-                            />
-
-                            {merror && email.length == 0 ? (
-                              <p>This field is required</p>
-                            ) : (
-                              ""
-                            )}
-                          </FormControl>
-                        </div>
-
-                        <Button onClick={modalbtn}>Go</Button>
-                      </ModalBody>
-                    </ModalContent>
-                  </Modal>
+                
                 <Button1 text={"Client login"} className={styles.client} />
               </div>
 
