@@ -225,13 +225,20 @@
         position: absolute;
         max-height: 550px;
         top: -4px;
-        left: 140px;
+        left: 24%;
+        @media (max-width: 1340px) {
+          left: 18%;
+        }
+        @media (max-width: 1224px) {
+          left: 24%;
+        }
         @media (max-width: 768px) {
           width: 219px;
           height: 344px;
           left: 57px;
           top: -10px;
         }
+       
 
         img {
           width: 100%;
